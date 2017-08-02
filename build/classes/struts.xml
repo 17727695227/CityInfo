@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	
+	<package name="cityInfo" namespace="/cityinfo" extends="struts-default">
+		<action name="goindex" class="com.java1234.action.IndexAction">
+			<result name="index">/view/indexTemp.jsp</result>
+		</action>
+		
+		<action name="info" class="com.java1234.action.InfoAction">
+			<result name="searchInfo">/view/indexTemp.jsp</result>
+			<result name="detailsInfo">/view/indexTemp.jsp</result>
+			<result name="addInfo">/view/indexTemp.jsp</result>
+			<result name="addInfoSuccess">/view/indexTemp.jsp</result>
+		</action>
+		
+		
+		<action name="user" class="com.java1234.action.UserAction">
+			<result name="login">/pages/admin/login.jsp</result>
+			<result name="loginOut" type="redirectAction">goindex</result>
+			<result name="main">/pages/admin/view/adminTemp.jsp</result>
+		</action>
+		
+		<action name="admin" class="com.java1234.action.AdminAction">
+			<result name="searchInfo">/pages/admin/view/adminTemp.jsp</result>
+		</action>
+	</package>
+</struts>
